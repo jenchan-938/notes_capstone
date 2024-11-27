@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   # Routes for the Document resource:
 
+  get("/", {:controller => "notes", :action =>"index"})
   # CREATE
   post("/insert_document", { :controller => "documents", :action => "create" })
           
   # READ
+ 
+
   get("/documents", { :controller => "documents", :action => "index" })
   
   get("/documents/:path_id", { :controller => "documents", :action => "show" })
