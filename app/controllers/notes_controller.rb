@@ -20,7 +20,6 @@ class NotesController < ApplicationController
   def create
     the_note = Note.new
     the_note.body = params.fetch("query_body")
-    the_note.creator_id = params.fetch("query_creator_id")
     the_note.document_id = params.fetch("query_document_id")
 
     if the_note.valid?
@@ -36,7 +35,6 @@ class NotesController < ApplicationController
     the_note = Note.where({ :id => the_id }).at(0)
 
     the_note.body = params.fetch("query_body")
-    the_note.creator_id = params.fetch("query_creator_id")
     the_note.document_id = params.fetch("query_document_id")
 
     if the_note.valid?
